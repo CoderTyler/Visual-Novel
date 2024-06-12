@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo/english.png">
+    <style>
+        .menu-bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .menu-bg img{
+            min-width: 100vw;
+            min-height: 100vh;
+        }
+        .game-options{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(26, 7, 0, 0.75);
+        }
+
+        .menu-logo{
+            margin: 50px 30px 0px 30px;
+            width: 30vw;
+        }
+
+        .menu-option{
+            font-size: 3vw;
+            font-family: "Playhouse", sans-serif;
+            -webkit-text-stroke: 1px white;
+            /**-webkit-text-stroke: 1px white;*/
+            color: rgb(253, 183, 85);
+            border-radius: 20px;
+            max-width: 400px;
+            padding: 20px 200px 20px 20px;
+            margin: 0px 100px;
+            
+        }
+        @media (max-width: 1024px) {
+            .menu-logo{
+                margin: 50px 30px 0px 30px;
+                width: 80vw;
+            }
+            .menu-options{
+                width: 100vw;
+            }
+            .menu-option{
+                font-size: 10vw;
+                color: blue;
+                
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+        .menu-option:hover{
+            cursor: pointer;
+            background-color: rgb(38, 16, 0);
+            transition: .5s;
+        }
+        .game-settings .container, .game-credits .container{
+            margin: 10vh auto; 
+            min-width: 400px;
+            width: 50%;
+            height: 80vh;
+            background-color: rgba(26, 7, 0, 0.75);
+            font-size: 2.5vw;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-menu">
+        <div class="menu-bg">
+            <img src="assets/menu/story.jpg" id="menu-bg">
+        </div>
+        <div class="game-options">
+            <div class="menu-options">
+                <img src="assets/menu/logo.png" class="menu-logo">
+                <a href="game.html"><div class="menu-option" id="play">Play</div></a>
+                <div class="menu-option" id="settings">Settings</div>
+                <div class="menu-option" id="credits">Credits</div>
+                <div class="menu-option" id="story">Quit</div>
+            </div>
+            <div class="game-settings">
+                <div class="container"> 
+                    <div>Volume:</div>
+                    <div>Speed:</div>
+                </div>
+            </div>
+            <div class="game-credits">
+                <div class="container"> 
+                    <div>Scripter: Tyler</div>
+                    <div>Visuals: </div>
+                </div>
+            </div>
+        </div>
+        <audio id="menu-music" autoplay loop></audio>
+        <audio id="menu-effect" autoplay></audio>
+    </div>
+    <script type="module"src="src/index.js"> </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .scene{
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        #animated-image{
+            height: 125%;
+        }
+        #scene-image{
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .actors{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .actor{
+            transform: translatey(40%);
+            z-index: -1;
+            width: 25%;
+            min-width: 300px;
+        }
+        /**problems caused by dialogbox height*/
+        .game-dialog{
+            position: relative;
+            height: 100vh;
+        }
+        .dialog-box{
+            position: absolute; 
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-color: hsla(0, 0%, 0%, 0.533);
+            color: white;
+            font-size: 1.75rem;
+            font-family: sans-serif;
+        }
+
+        /**loading*/
+        .game-load{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            overflow: hidden;
+        }
+        #load-bg{
+            position: inherit;
+            width: 100%;
+        }
+        #load-icon{
+            position: inherit;
+            right: 0;
+            bottom: 0;
+            margin: 20px;
+            width: 10%;
+        }
+
+        @media (max-width: 1024px) {
+            #load-icon{
+                width: 20%;
+            }
+            #load-bg{
+                width: 275%;
+                transform: translate(-50%);
+            }
+            .dialog-box{
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-dialog">
+            <!--
+            <div id="dialog-scene">
+                <img src="#" id="animated-image">
+            </div>
+            -->
+            <div class="scene">
+                <img src="#" id="scene-image">
+            </div>
+            <div class="actors">
+                <img src="#" class="actor" actor="1">
+                <img src="#" class="actor" actor="2">
+                <img src="#" class="actor" actor="3">
+                <img src="#" class="actor" actor="4">
+            </div>
+            <div class="dialog-box">
+                <h3 id="name">Lorem</h3>
+                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium enim facilis repellendus, quam sunt incidunt doloremque quis saepe, quisquam omnis laboriosam illum ipsa nam. Velit dolore expedita adipisci sunt eligendi?</p>
+            </div>
+            <audio id="dialog-music" autoplay loop></audio>
+            <audio id="dialog-effect" autoplay loop></audio>
+        </div>
+        <div class="game-load">
+            <img src="" id="load-bg">
+            <img src="assets/loading/icon.webp" id="load-icon">
+            <audio autoplay id="load-music"></audio>
+        </div>
+    </div>
+    <script type="module" src="src/game.js"></script>
+</body>
+</html>

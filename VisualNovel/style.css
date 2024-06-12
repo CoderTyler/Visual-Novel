@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face{
+    font-family: Playhouse;
+    src:url("assets/fonts/Whachouse.ttf");
+    font-weight: medium;
+}
+
+
+
