@@ -1,2 +1,2 @@
-# Visual-Novel-Alpha
-This is website is an incomplete visual.
+# Visual-Novel
+This is website is an incomplete visual novel.
